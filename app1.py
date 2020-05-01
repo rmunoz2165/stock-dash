@@ -58,7 +58,7 @@ app.layout = html.Div(style={'backgroundColor':'#23272c'},children=[
     html.Div([
             html.Button(id='submit-button',
                         n_clicks=0,
-                        children='Submit',
+                        children='Refresh',
                         style={'fontSize':24,
                                 'marginLeft':'30px',
                                 'background-color':'#687C0B',
