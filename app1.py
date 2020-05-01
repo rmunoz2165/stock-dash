@@ -44,7 +44,7 @@ app.layout = html.Div(style={'backgroundColor':'#23272c'},children=[
                 )
     ], style={'display':'inline-block', 'verticalAlign':'top', 'width:':'30%','color':'#0E85AF'}),
     html.Div([
-        html.H3( 'Select a Start and End Date:'),style={'color':'#687c0b'}),
+        html.H3( 'Select a Start and End Date:',style={'color':'#687c0b'}),
         dcc.DatePickerRange(
             id='my_date_picker',
             min_date_allowed = datetime(2015,1,1),
