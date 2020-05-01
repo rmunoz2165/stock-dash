@@ -35,14 +35,14 @@ for tic in nsdq.index:
 app.layout = html.Div(style={'backgroundColor':'#23272c'},children=[
     html.H1('Stock Ticker Dashboard'),
     html.Div([
-        html.H3('Select a stock symbol', style = {'paddingRight':'30px'}),
+        html.H3('Select a stock symbol', style = {'paddingRight':'30px','color':'#687c0b'}),
         dcc.Dropdown(
                 id='my_stock_picker', #Input box ID
                 options = options,
                 value=['TSLA'],
                 multi= True
                 )
-    ], style={'display':'inline-block', 'verticalAlign':'top', 'width:':'30%'}),
+    ], style={'display':'inline-block', 'verticalAlign':'top', 'width:':'30%','color':'#0E85AF'}),
     html.Div([
         html.H3( 'Select a Start and End Date:'),
         dcc.DatePickerRange(
