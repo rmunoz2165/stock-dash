@@ -44,7 +44,7 @@ app.layout = html.Div(style={'backgroundColor':'#23272c'},children=[
                 )
     ], style={'display':'inline-block', 'verticalAlign':'top', 'width:':'30%','color':'#0E85AF'}),
     html.Div([
-        html.H3( 'Select a Start and End Date:'),
+        html.H3( 'Select a Start and End Date:'),style={'color':'#687c0b'}),
         dcc.DatePickerRange(
             id='my_date_picker',
             min_date_allowed = datetime(2015,1,1),
@@ -53,13 +53,17 @@ app.layout = html.Div(style={'backgroundColor':'#23272c'},children=[
             end_date = datetime.today()
                                     
             )
-    ], style={'display':'inline-block'}),
+    ], style={'display':'inline-block', 'color':'#A3A7B0'}),
     
     html.Div([
             html.Button(id='submit-button',
                         n_clicks=0,
                         children='Submit',
-                        style={'fontSize':24, 'marginLeft':'30px'}
+                        style={'fontSize':24,
+                                'marginLeft':'30px',
+                                'background-color':'#687C0B',
+                                'color':'#FBFDF6',
+                                'border-color':'yellow'}
             ),
     ],style={'display':'inline-block'}),
 
@@ -91,7 +95,21 @@ def update_graph(n_clicks,stock_ticker, start_date, end_date):
         traces.append({'x': df.index, 'y': df['Close'], 'name':tic})
     fig = {
         'data': traces,
-        'layout':{'title':', '.join(stock_ticker)+' Closing Prices'} 
+        'layout':{'title':', '.join(stock_ticker)+' Closing Prices',
+                'plot_bgcolor': '#23272C',
+                'paper_bgcolor': '#23272C',
+                'font':{'color':'yellow', 'size':'18'},
+                'xaxis':{
+                    'showline':True,
+                    'showticklabels':True,
+                    'color':'white',
+                },
+                'yaxis':{
+                    'showline':True,
+                    'showtickerlabels':True,
+                    'color':'white',
+                }
+            } 
     }
     return fig
 
