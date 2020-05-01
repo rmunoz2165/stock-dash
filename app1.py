@@ -32,7 +32,7 @@ for tic in nsdq.index:
 
 
 #Create a Div to contain the basic headers( H1 and H3 ), an input box and the graph
-app.layout = html.Div([
+app.layout = html.Div(style={'backgroundColor':'#23272c'},children=[
     html.H1('Stock Ticker Dashboard'),
     html.Div([
         html.H3('Select a stock symbol', style = {'paddingRight':'30px'}),
